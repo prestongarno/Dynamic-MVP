@@ -9,5 +9,6 @@ Dynamic-MVP aims to cut down on the amount of boilerplate code that is needed wh
 It also will allow for the Presenter to declare which Events are allowed to be sent from the view, and also provides the parameters for a callback event.  The View is left with the responsibility of implementing the definition set by the Presenter. (Examples will be provided)
 
 Dynamic-MVP consists of two modules:
-      1)  mvp-compiler - annotation processor, dependency only needed at compile time
-      2)  dynamic-mvp - runtime dependency
+      
+      \t\t1)  mvp-compiler - annotation processor, dependency only needed at compile time
+      \t\t2)  dynamic-mvp - runtime dependency
