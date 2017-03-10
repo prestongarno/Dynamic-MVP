@@ -16,13 +16,7 @@
 
 package edu.gvsu.prestongarno.example;
 
-/**
- * ========================================================================
- * $(PROJECT_NAME) - by Preston Garno on 3/6/17
- * =========================================================================
- */
-public class runner {
-    public static void main(String[] args) {
-        System.out.println("Secret generated string is :: " + runnerGenerated.getHackedString());
-    }
+import edu.gvsu.preston.Presenter;
+
+public class SamplePresenter extends Presenter {
 }

@@ -14,15 +14,8 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.prestongarno.example;
+package edu.gvsu.preston.annotations;
 
-/**
- * ========================================================================
- * $(PROJECT_NAME) - by Preston Garno on 3/6/17
- * =========================================================================
- */
-public class runner {
-    public static void main(String[] args) {
-        System.out.println("Secret generated string is :: " + runnerGenerated.getHackedString());
-    }
+
+public @interface Handler {
 }
