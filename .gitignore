@@ -2,3 +2,9 @@ mvp-compiler
 .git
 core/build
 *.class
+.gradle
+.idea
+build
+gradle
+gradlew
+gradlew.bat
