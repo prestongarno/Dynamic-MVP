@@ -10,5 +10,5 @@ It also will allow for the Presenter to declare which Events are allowed to be s
 
 Dynamic-MVP consists of two modules:
       
-      \t\t1)  mvp-compiler - annotation processor, dependency only needed at compile time
-      \t\t2)  dynamic-mvp - runtime dependency
+      1)  mvp-compiler - annotation processor, dependency only needed at compile time
+      2)  dynamic-mvp - runtime dependency
