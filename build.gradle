@@ -1,0 +1,58 @@
+buildscript {
+
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+        flatDir {dirs './ExampleApplication/libs'}
+    }
+
+    dependencies {
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.9"
+    }
+}
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+repositories {
+    maven { url "https://plugins.gradle.org/m2/" }
+}
+
+task ex {
+        println('Executing prerequisites...')
+        ':mvp-compiler:jar'
+        ':core:jar'
+        println('Building example...')
+        ':ExampleApplication:clean'
+        ':ExampleApplication:compileJava'
+}
+
+task buildExample {
+    ':ExampleApplication:build'
+}
+
+task makeLibraries {
+    ':mvp-compiler:jar'
+    ':core:jar'
+}
+
+task cleanLibs(type: Delete){
+    delete('./ExampleApplication/libs/dynamic-mvp-0.1.jar')
+    delete('./ExampleApplication/libs/mvp-compiler-0.1.jar')
+}
+
+task exComp {
+    doFirst {
+        ':ExampleApplication:compileJava'
+    }
+}
+
+build {
+    doFirst { subprojects { clean }
+    subprojects { jar }}
+}
+
+group 'Dynamic-MVP'
+
+version '0.1-SNAPSHOT'
+
