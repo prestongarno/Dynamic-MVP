@@ -16,9 +16,9 @@
 
 package edu.gvsu.prestongarno.example;
 
-import edu.gvsu.preston.GM;
-import edu.gvsu.preston.annotations.*;
-import edu.gvsu.preston.interfaces.request.Event;
+import edu.gvsu.prestongarno.GM;
+import edu.gvsu.prestongarno.annotations.*;
+import edu.gvsu.prestongarno.interfaces.Event;
 import edu.gvsu.prestongarno.example.SampleResources.SampleCallback;
 
 @View(Presenter = SamplePresenter.class)

@@ -17,7 +17,7 @@
 package edu.gvsu.prestongarno.example.SampleResources;
 
 
-import edu.gvsu.preston.interfaces.result.Callback;
+import edu.gvsu.prestongarno.interfaces.Callback;
 
 /**
  * *************************************************

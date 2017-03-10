@@ -14,11 +14,8 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston;
+package edu.gvsu.prestongarno;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 /**

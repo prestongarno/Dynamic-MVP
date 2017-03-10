@@ -14,25 +14,19 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston;
+package edu.gvsu.prestongarno;
 
-import edu.gvsu.preston.interfaces.result.Callback;
-import edu.gvsu.preston.interfaces.request.Event;
-import edu.gvsu.preston.interfaces.view.iView;
+import edu.gvsu.prestongarno.interfaces.Callback;
+import edu.gvsu.prestongarno.interfaces.Event;
+import edu.gvsu.prestongarno.interfaces.MVPView;
 
-import java.lang.reflect.Method;
 import java.util.*;
 
-/**
- * ========================================================================
- * $(PROJECT_NAME) - by Preston Garno on 2/25/17
- * =========================================================================
- */
 public abstract class Presenter {
 
 //    private static List<Class<? extends Event>> POSSIBLE_EVENTS;
 
-    private iView viewHandle;
+    private MVPView viewHandle;
     private final Random random;
     /**
      * This Map stores the results of a background job(s) that complete when the view is in an
@@ -85,7 +79,7 @@ public abstract class Presenter {
     }
 
     @SuppressWarnings("unchecked")
-    void setViewHandle(iView view) {
+    void setViewHandle(MVPView view) {
         this.viewHandle = view;
 /*        Callback result;
         Object[] args;
@@ -134,7 +128,7 @@ public abstract class Presenter {
         // need to generate a class to be able to get the lambda from the view
     }
     /**
-     * This method is how the result is passed back. The iView instance is hidden in the superclass,
+     * This method is how the result is passed back. The MVPView instance is hidden in the superclass,
      * so the only way for the child class to easily pass the results back to the view without manually
      * doing this same thing is to call super.onResult().
      * <p>

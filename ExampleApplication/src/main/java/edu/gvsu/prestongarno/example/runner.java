@@ -26,6 +26,6 @@ import edu.gvsu.prestongarno.example.SampleResources.SampleEvent;
 public class runner {
     public static void main(String[] args) {
         SampleView view = new SampleView();
-        view.testEvent(new SampleEvent(view.sampleCallback));
+//        view.testEvent(new SampleEvent(view.sampleCallback));
     }
 }

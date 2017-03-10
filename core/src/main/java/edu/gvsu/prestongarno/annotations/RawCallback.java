@@ -14,12 +14,23 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.interfaces.result;
+package edu.gvsu.prestongarno.annotations;
+
+import edu.gvsu.prestongarno.annotations.AnnotationContainers.RawCallContainer;
+import edu.gvsu.prestongarno.interfaces.Callback;
+
+import java.lang.annotation.*;
 
 /**
- * Created by preston on 2/27/17.
- * Messing around with Lambdas and seeing if there's an easy way to specify "types" of results
- * so the view knows which parameter values to expect
- */
-public interface Callback {
+ * *************************************************
+ * Dynamic-MVP - edu.gvsu.prestongarno.annotations - by Preston Garno on 3/10/17
+ *
+ * Annotate a Presenter with this to denote a callback that can be
+ * invoked at any time without warning
+ ***************************************************/
+@Repeatable(RawCallContainer.class)
+@Retention(RetentionPolicy.SOURCE)
+@Target(ElementType.TYPE)
+public @interface RawCallback {
+    Class<? extends Callback> Callback();
 }

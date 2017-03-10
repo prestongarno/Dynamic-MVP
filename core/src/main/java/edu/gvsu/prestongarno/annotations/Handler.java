@@ -14,24 +14,21 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.annotations;
+package edu.gvsu.prestongarno.annotations;
 
-import edu.gvsu.preston.annotations.AnnotationContainers.RawCallContainer;
-import edu.gvsu.preston.interfaces.result.Callback;
-
-import java.lang.annotation.Repeatable;
+import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * *************************************************
- * Dynamic-MVP - edu.gvsu.preston.annotations - by Preston Garno on 3/10/17
+ * Dynamic-MVP - edu.gvsu.prestongarno.annotations - by Preston Garno on 3/9/17
  *
- * Annotate a Presenter with this to denote a callback that can be
- * invoked at any time without warning
+ * This annotation is used to mark callbacks to View layer
  ***************************************************/
-@Repeatable(RawCallContainer.class)
+
 @Retention(RetentionPolicy.SOURCE)
-public @interface RawCallback {
-    Class<? extends Callback> Callback();
+@Target(ElementType.FIELD)
+public @interface Handler {
 }

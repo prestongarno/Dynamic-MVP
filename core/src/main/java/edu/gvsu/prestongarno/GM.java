@@ -14,9 +14,9 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston;
+package edu.gvsu.prestongarno;
 
-import edu.gvsu.preston.interfaces.request.Event;
+import edu.gvsu.prestongarno.interfaces.Event;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +55,7 @@ public class GM {
      * @param lifecycleID
      * @return
      *//*
-    public void onViewStart(iView view)
+    public void onViewStart(MVPView view)
     {
         for(View p : Presenters.getPresenters(lifecycleID)){
             if(p.presentsFor(view)){

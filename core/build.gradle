@@ -18,15 +18,21 @@ group 'Dynamic-MVP'
 version '0.1'
 
 apply plugin: 'java'
+apply plugin: 'idea'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    flatDir { dirs '../libs'}
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+clean {
+    delete('../ExampleApplication/libs/dynamic-mvp-0.1.jar')
 }
 
 jar {
@@ -46,7 +52,7 @@ jar {
                 'Repositories':'https://github.com/prestongarno/Dynamic-MVP'
     }
     //change this once working with Dyn-MVP main again
-    destinationDir = file('../ExampleApplication/libs')
+    destinationDir = file('../libs')
     baseName = 'dynamic-mvp-' + version
     archiveName = baseName + '.jar'
     println('making dynamic-mvp.jar')

@@ -16,7 +16,7 @@
 
 package edu.gvsu.prestongarno.example.SampleResources;
 
-import edu.gvsu.preston.interfaces.request.Event;
+import edu.gvsu.prestongarno.interfaces.Event;
 
 /**
  * *************************************************

@@ -14,8 +14,7 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.exceptions;
+package edu.gvsu.prestongarno.exceptions;
 
-public class ViewException extends Exception {
-
+public class UnhandledEventException extends PresenterException {
 }

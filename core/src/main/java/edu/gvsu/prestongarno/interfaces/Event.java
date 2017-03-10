@@ -14,9 +14,7 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.interfaces.request;
-
-import edu.gvsu.preston.interfaces.result.Callback;
+package edu.gvsu.prestongarno.interfaces;
 
 /**
  * ========================================================================

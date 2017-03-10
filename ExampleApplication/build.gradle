@@ -45,7 +45,6 @@ jar {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
     compile ':dynamic-mvp:0.1'
     apt ':mvp-compiler:0.1'
 }

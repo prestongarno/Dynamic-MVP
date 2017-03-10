@@ -14,14 +14,15 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.annotations.AnnotationContainers;
+package edu.gvsu.prestongarno.annotations;
 
-import edu.gvsu.preston.annotations.RawCallback;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-/**
- * *************************************************
- * Dynamic-MVP - edu.gvsu.preston.annotations.AnnotationContainers - by Preston Garno on 3/10/17
- ***************************************************/
-public @interface RawCallContainer {
-    RawCallback[] value();
+@Retention(RetentionPolicy.SOURCE)
+@Target(ElementType.TYPE)
+public @interface View {
+    Class<? extends edu.gvsu.prestongarno.Presenter> Presenter();
 }

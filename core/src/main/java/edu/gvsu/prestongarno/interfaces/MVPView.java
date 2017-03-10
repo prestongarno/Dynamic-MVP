@@ -14,18 +14,18 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.annotations;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+package edu.gvsu.prestongarno.interfaces;
 
 /**
- * *************************************************
- * Dynamic-MVP - edu.gvsu.preston.annotations - by Preston Garno on 3/9/17
- *
- * This annotation is used to mark callbacks to View layer
- ***************************************************/
-
-@Retention(RetentionPolicy.SOURCE)
-public @interface Handler {
+ * ========================================================================
+ * $(PROJECT_NAME) - by Preston Garno on 2/25/17
+ * =========================================================================
+ */
+public interface MVPView {
+    /**
+     * Get the implementation of "Callback" that this View defines. Returns null if no Callback is defined
+     *
+     * @param eventClass
+     */
+    Callback getImplementation(Class<? extends Callback> eventClass);
 }

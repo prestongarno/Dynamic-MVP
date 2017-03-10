@@ -14,11 +14,19 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.exceptions;
+package edu.gvsu.prestongarno.annotations;
+
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * *************************************************
- * Dynamic-MVP - edu.gvsu.preston.exceptions - by Preston Garno on 3/9/17
- ***************************************************/
-public class CallbackImplementationException extends ViewException {
+ * Annotation marks methods that handle events - <br>
+ *     Only applicable to classes extending Presenter
+ */
+@Retention(RetentionPolicy.SOURCE)
+@Target(ElementType.METHOD)
+public @interface EventHandler {
 }

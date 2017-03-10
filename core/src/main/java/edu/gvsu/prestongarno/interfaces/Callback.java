@@ -14,20 +14,12 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.interfaces.view;
-
-import edu.gvsu.preston.interfaces.result.Callback;
+package edu.gvsu.prestongarno.interfaces;
 
 /**
- * ========================================================================
- * $(PROJECT_NAME) - by Preston Garno on 2/25/17
- * =========================================================================
+ * Created by prestongarno on 2/27/17.
+ * Messing around with Lambdas and seeing if there's an easy way to specify "types" of results
+ * so the view knows which parameter values to expect
  */
-public interface iView {
-    /**
-     * Get the implementation of "Callback" that this View defines. Returns null if no Callback is defined
-     *
-     * @param eventClass
-     */
-    Callback getImplementation(Class<? extends Callback> eventClass);
+public interface Callback {
 }

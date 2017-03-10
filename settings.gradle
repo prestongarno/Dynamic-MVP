@@ -17,5 +17,4 @@
 rootProject.name = 'Dynamic-MVP'
 include 'core'
 include 'mvp-compiler'
-include 'ExampleApplication'
-
+//include 'ExampleApplication'
