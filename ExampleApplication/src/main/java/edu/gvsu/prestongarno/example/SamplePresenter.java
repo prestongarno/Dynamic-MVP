@@ -17,6 +17,19 @@
 package edu.gvsu.prestongarno.example;
 
 import edu.gvsu.preston.Presenter;
+import edu.gvsu.preston.annotations.EventHandler;
+import edu.gvsu.prestongarno.example.SampleResources.SampleEvent;
 
 public class SamplePresenter extends Presenter {
+
+    @EventHandler
+    protected void methodThatCanBeNamedWhateverIWant(SampleEvent sampleEvent) {
+        super.onEvent(sampleEvent);
+
+        if(sampleEvent.printNameAtEnd)
+            super.onResult(sampleEvent, "Hello, my name is : preston");
+        else
+            super.onResult(sampleEvent, "This string doesn't include my name");
+    }
+
 }

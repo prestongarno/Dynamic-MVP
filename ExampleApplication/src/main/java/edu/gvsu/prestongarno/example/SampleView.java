@@ -16,8 +16,18 @@
 
 package edu.gvsu.prestongarno.example;
 
-import edu.gvsu.preston.annotations.View;
+import edu.gvsu.preston.GM;
+import edu.gvsu.preston.annotations.*;
+import edu.gvsu.preston.interfaces.request.Event;
+import edu.gvsu.prestongarno.example.SampleResources.SampleCallback;
 
 @View(Presenter = SamplePresenter.class)
 public class SampleView {
+
+    public void testEvent(Event event){
+        GM.getInstance().on(event);
+    }
+
+    @Handler
+    public final SampleCallback sampleCallback = System.out::println;
 }

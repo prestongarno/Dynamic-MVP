@@ -16,16 +16,14 @@
 
 package edu.gvsu.preston.annotations;
 
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * *************************************************
- * Dynamic-MVP - edu.gvsu.preston.annotations - by Preston Garno on 3/9/17
- *
- * This annotation is used to mark callbacks to View layer
- ***************************************************/
-
+ * Annotation marks methods that handle events - <br>
+ *     Only applicable to classes extending Presenter
+ */
 @Retention(RetentionPolicy.SOURCE)
-public @interface Handler {
+public @interface EventHandler {
 }

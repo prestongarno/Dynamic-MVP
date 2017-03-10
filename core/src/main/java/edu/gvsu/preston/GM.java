@@ -38,7 +38,7 @@ public class GM {
 
 
     private GM() {
-        this.presenters = new ArrayList<Presenter>(4);
+        this.presenters = new ArrayList<>(4);
     }
 
     public void on(Event event) {
@@ -57,7 +57,7 @@ public class GM {
      *//*
     public void onViewStart(iView view)
     {
-        for(Presenter p : Presenters.getPresenters(lifecycleID)){
+        for(View p : Presenters.getPresenters(lifecycleID)){
             if(p.presentsFor(view)){
                 p.setViewHandle(view);
                 presenters.add(p);
@@ -65,7 +65,7 @@ public class GM {
         }
     }*/
     public void onViewDone(String lifecycleID) {
-/*        for(Presenter p : presenters){
+/*        for(View p : presenters){
                 p.destroy();*/
     }
 }

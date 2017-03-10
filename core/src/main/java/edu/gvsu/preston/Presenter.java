@@ -40,7 +40,7 @@ public abstract class Presenter {
      */
     private final Map<Class<? extends Callback>, Object[]> pendingResults;
     /**
-     * This Array only exists as long as the View that this Presenter supports is alive
+     * This Array only exists as long as the View that this View supports is alive
      * Once it is re-created this will be cleared and any calls to the values here will lead
      * to a Null Pointer and if not that then you most likely have a memory leak
      */
@@ -66,7 +66,7 @@ public abstract class Presenter {
 
     /**
      * GM calls this method to broadcast
-     * events a presenter is concerned with
+     * events a View is concerned with
      * All subclasses must call super.onEvent()
      * if they want their results returned to the
      * main thread.
@@ -119,15 +119,20 @@ public abstract class Presenter {
         Iterator<Map.Entry<Integer, Event>> it = jobs.entrySet().iterator();
         int key;
         Event event;
-        while (it.hasNext()) {
+        /*while (it.hasNext()) {
             Map.Entry<Integer, Event> next = it.next();
             key = next.getKey();
             event = next.getValue();
             this.jobsType.put(key, event.getCallback().getClass());
-        }
+        }*/
         this.jobs.clear();
     }
 
+    protected void onResult(Event event, Object... params)
+    {
+        //method call from subclass presenter to signal job completion
+        // need to generate a class to be able to get the lambda from the view
+    }
     /**
      * This method is how the result is passed back. The iView instance is hidden in the superclass,
      * so the only way for the child class to easily pass the results back to the view without manually
@@ -140,9 +145,9 @@ public abstract class Presenter {
      *
      * @param args
      */
-    protected void onResult(int jobNumber, Object... args) {
+    private void onResult(int jobNumber, Object... args) {
         Callback result;
-        if (viewHandle != null) {
+        /*if (viewHandle != null) {
             try {
 
                 Event e = this.jobs.get(jobNumber);
@@ -175,7 +180,7 @@ public abstract class Presenter {
             }
         } else {
             pendingResults.put(jobsType.get(jobNumber), args);
-        }
+        }*/
     }
 
     //Meta-Programming - Processor should generate methods taking each seperate event

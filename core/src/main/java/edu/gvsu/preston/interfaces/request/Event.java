@@ -23,7 +23,7 @@ import edu.gvsu.preston.interfaces.result.Callback;
  * $(PROJECT_NAME) - by Preston Garno on 2/25/17
  * =========================================================================
  * <p>
- * This class will be implemented by each presenter to define what kind of
+ * This class will be implemented by each View to define what kind of
  * information that the view needs to send if it wants to have its request
  * handled correctly
  * <p>
@@ -31,28 +31,22 @@ import edu.gvsu.preston.interfaces.result.Callback;
  */
 public abstract class Event {
 
-    //DANGER --> this may or may not contain references
-    //to the view and will leak if not dropped when view destroyed
-    final Callback result;
-
-    public Callback getCallback() {
-        return result;
-    }
+    private final Class<? extends Callback> CALLBACK_TYPE;
 
     /**
      * Uses what is apparently described as "Dependency Injection" (lol) nowadays to define a result
-     * result type for each and every request that is allowed to be sent to a presenter
+     * result type for each and every request that is allowed to be sent to a View
      * <p>
      * The reason for this is that the presentation model defines what TYPE of data/etc will be sent to
      * the view, but seperate objects allow for releasing of this object to be GC if the view
      * is changed before the request returns.  Allowing the view to implement the actual action of
-     * displaying the data, but allowing the presenter to define the structure of it is about as
+     * displaying the data, but allowing the View to define the structure of it is about as
      * clean of a decoupling of the View and the Model as I can imagine with the least hassle and side effects
      * the
      *
-     * @param callback
+     * @param callbackType the callbackType set for this event. Null if there is no callbackType, which should be rare
      */
-    public Event(Callback callback) {
-        result = callback;
+    public Event(Class<? extends Callback> callbackType) {
+        CALLBACK_TYPE = callbackType;
     }
 }

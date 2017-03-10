@@ -36,14 +36,14 @@ public class Presenters {
         throw new RuntimeException("nono");
     }
 
-    //Presenter[] getPresenter()
+    //View[] getPresenter()
 
     //============================================================================//
     //      A list of all possible presenters in the app
     //============================================================================//
-    //private static final Presenter mainPresenter = (Presenter) new MainPresenter();
+    //private static final View mainPresenter = (View) new MainPresenter();
     //============================================================================//
-    //      An array to make finding the correct presenter easy
+    //      An array to make finding the correct View easy
     //============================================================================//
-    //private static final Presenter[] presenters = new Presenter[]{mainPresenter};
+    //private static final View[] presenters = new View[]{mainPresenter};
 }

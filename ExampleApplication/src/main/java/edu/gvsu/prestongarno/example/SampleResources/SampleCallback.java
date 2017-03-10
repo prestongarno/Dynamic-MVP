@@ -14,18 +14,17 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.annotations;
+package edu.gvsu.prestongarno.example.SampleResources;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+
+import edu.gvsu.preston.interfaces.result.Callback;
 
 /**
  * *************************************************
- * Dynamic-MVP - edu.gvsu.preston.annotations - by Preston Garno on 3/9/17
+ * Dynamic-MVP - edu.gvsu.prestongarno.example - by Preston Garno on 3/9/17
  *
- * This annotation is used to mark callbacks to View layer
+ * This represents a sample callback interface that the view has to implement
  ***************************************************/
-
-@Retention(RetentionPolicy.SOURCE)
-public @interface Handler {
+public interface SampleCallback extends Callback {
+    void call(String message);
 }

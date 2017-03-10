@@ -16,6 +16,8 @@
 
 package edu.gvsu.prestongarno.example;
 
+import edu.gvsu.prestongarno.example.SampleResources.SampleEvent;
+
 /**
  * ========================================================================
  * $(PROJECT_NAME) - by Preston Garno on 3/6/17
@@ -23,6 +25,7 @@ package edu.gvsu.prestongarno.example;
  */
 public class runner {
     public static void main(String[] args) {
-        System.out.println("Secret generated string is :: " + runnerGenerated.getHackedString());
+        SampleView view = new SampleView();
+        view.testEvent(new SampleEvent(view.sampleCallback));
     }
 }

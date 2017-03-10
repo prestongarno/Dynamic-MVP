@@ -14,18 +14,11 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.preston.annotations;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+package edu.gvsu.preston.exceptions;
 
 /**
  * *************************************************
- * Dynamic-MVP - edu.gvsu.preston.annotations - by Preston Garno on 3/9/17
- *
- * This annotation is used to mark callbacks to View layer
+ * Dynamic-MVP - edu.gvsu.preston.exceptions - by Preston Garno on 3/9/17
  ***************************************************/
-
-@Retention(RetentionPolicy.SOURCE)
-public @interface Handler {
+public class CallbackImplementationException extends ViewException {
 }
