@@ -14,12 +14,16 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.prestongarno.interfaces;
+import edu.gvsu.prestongarno.annotations.meta.AnnotationRule;
+import org.junit.Test;
 
 /**
- * Created by prestongarno on 2/27/17.
- * Messing around with Lambdas and seeing if there's an easy way to specify "types" of results
- * so the view knows which parameter values to expect
- */
-public interface Callback {
+ * *************************************************
+ * Dynamic-MVP - PACKAGE_NAME - by Preston Garno on 3/11/17
+ ***************************************************/
+public class ScratchUnitTest {
+    @Test
+    public void testTestMethod() throws Exception {
+        System.out.println(AnnotationRule.class.getCanonicalName());
+    }
 }

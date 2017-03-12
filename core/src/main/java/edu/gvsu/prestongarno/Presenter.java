@@ -16,9 +16,7 @@
 
 package edu.gvsu.prestongarno;
 
-import edu.gvsu.prestongarno.interfaces.Callback;
-import edu.gvsu.prestongarno.interfaces.Event;
-import edu.gvsu.prestongarno.interfaces.MVPView;
+import edu.gvsu.prestongarno.annotations.Callback;
 
 import java.util.*;
 
@@ -26,7 +24,6 @@ public abstract class Presenter {
 
 //    private static List<Class<? extends Event>> POSSIBLE_EVENTS;
 
-    private MVPView viewHandle;
     private final Random random;
     /**
      * This Map stores the results of a background job(s) that complete when the view is in an
@@ -73,14 +70,12 @@ public abstract class Presenter {
     private int generateJobNumber() {
         return random.nextInt(999999999);
     }
-
-    void destroy() {
-        this.viewHandle = null;
-    }
-
+/*
     @SuppressWarnings("unchecked")
     void setViewHandle(MVPView view) {
-        this.viewHandle = view;
+        this.viewHandle = view;*//*
+
+*/
 /*        Callback result;
         Object[] args;
         for(Map.Entry<Class<? extends Event>, Object[]> pending : this.pendingResults.entrySet()){
@@ -101,26 +96,32 @@ public abstract class Presenter {
                     System.out.println(0/0);
                 }
             }
-        }*/
+        }*//*
+
     }
 
-    /**
+    */
+/**
      * Nullify the view, and all pending Events
      * that are being processed in the background
-     */
+     *//*
+
     void onViewDestroyed() {
         this.viewHandle = null;
         Iterator<Map.Entry<Integer, Event>> it = jobs.entrySet().iterator();
         int key;
         Event event;
-        /*while (it.hasNext()) {
+        */
+/*while (it.hasNext()) {
             Map.Entry<Integer, Event> next = it.next();
             key = next.getKey();
             event = next.getValue();
             this.jobsType.put(key, event.getCallback().getClass());
-        }*/
+        }*//*
+
         this.jobs.clear();
     }
+*/
 
     protected void onResult(Event event, Object... params)
     {

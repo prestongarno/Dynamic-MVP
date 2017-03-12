@@ -14,18 +14,21 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.prestongarno.interfaces;
+package edu.gvsu.prestongarno.annotations;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * ========================================================================
- * $(PROJECT_NAME) - by Preston Garno on 2/25/17
- * =========================================================================
+ * Created by prestongarno on 2/27/17.
+ *
+ * Used to denote an @FunctionalInterface that will be invoked on a View
+ * IMPORTANT: If an interface annotated with @Callback is not also a FunctionalInterface,
+ * An exception will be thrown at compile time
  */
-public interface MVPView {
-    /**
-     * Get the implementation of "Callback" that this View defines. Returns null if no Callback is defined
-     *
-     * @param eventClass
-     */
-    Callback getImplementation(Class<? extends Callback> eventClass);
+@Retention(RetentionPolicy.SOURCE)
+@Target(ElementType.METHOD)
+public @interface Callback {
 }

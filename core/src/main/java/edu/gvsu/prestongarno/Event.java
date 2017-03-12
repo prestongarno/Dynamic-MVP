@@ -14,7 +14,9 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.prestongarno.interfaces;
+package edu.gvsu.prestongarno;
+
+import edu.gvsu.prestongarno.annotations.Callback;
 
 /**
  * ========================================================================

@@ -24,5 +24,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
 public @interface View {
-    Class<? extends edu.gvsu.prestongarno.Presenter> Presenter();
+    Class<? extends edu.gvsu.prestongarno.Presenter> value();
 }

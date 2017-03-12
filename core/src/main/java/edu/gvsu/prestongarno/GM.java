@@ -16,8 +16,6 @@
 
 package edu.gvsu.prestongarno;
 
-import edu.gvsu.prestongarno.interfaces.Event;
-
 import java.util.ArrayList;
 import java.util.List;
 

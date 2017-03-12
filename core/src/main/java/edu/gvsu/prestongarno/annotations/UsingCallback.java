@@ -16,20 +16,17 @@
 
 package edu.gvsu.prestongarno.annotations;
 
-import edu.gvsu.prestongarno.annotations.AnnotationContainers.RawCallContainer;
-
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * *************************************************
- * Dynamic-MVP - edu.gvsu.prestongarno.annotations - by Preston Garno on 3/10/17
- *
- * Annotate a Presenter with this to denote a callback that can be
- * invoked at any time without warning
+ * Dynamic-MVP - edu.gvsu.prestongarno.annotations.AnnotationContainers - by Preston Garno on 3/11/17
  ***************************************************/
-@Repeatable(RawCallContainer.class)
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
-public @interface RawCallback {
-    Class<? extends Callback> Callback();
+public @interface UsingCallback {
+    Class value();
 }

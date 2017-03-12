@@ -14,22 +14,22 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.prestongarno.annotations;
+package edu.gvsu.prestongarno.annotations.meta.containers;
 
-import edu.gvsu.prestongarno.annotations.AnnotationContainers.RawCallContainer;
 
-import java.lang.annotation.*;
+import edu.gvsu.prestongarno.annotations.meta.AnnotationRule;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * *************************************************
- * Dynamic-MVP - edu.gvsu.prestongarno.annotations - by Preston Garno on 3/10/17
- *
- * Annotate a Presenter with this to denote a callback that can be
- * invoked at any time without warning
+ * Dynamic-MVP - edu.gvsu.prestongarno.meta.annotations.containers - by Preston Garno on 3/11/17
  ***************************************************/
-@Repeatable(RawCallContainer.class)
-@Retention(RetentionPolicy.SOURCE)
-@Target(ElementType.TYPE)
-public @interface RawCallback {
-    Class<? extends Callback> Callback();
+@Target(ElementType.ANNOTATION_TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface RuleContainer {
+    AnnotationRule[] value();
 }

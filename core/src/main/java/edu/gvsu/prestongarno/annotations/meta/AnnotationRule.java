@@ -1,4 +1,4 @@
-/*
+package edu.gvsu.prestongarno.annotations.meta;/*
  *       Copyright (c) 2017.  Preston Garno
  *
  *        Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,22 +14,25 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.prestongarno.annotations;
 
-import edu.gvsu.prestongarno.annotations.AnnotationContainers.RawCallContainer;
+import edu.gvsu.prestongarno.annotations.meta.containers.RuleContainer;
 
 import java.lang.annotation.*;
 
 /**
  * *************************************************
- * Dynamic-MVP - edu.gvsu.prestongarno.annotations - by Preston Garno on 3/10/17
+ * Dynamic-MVP - edu.gvsu.prestongarno.meta.annotations - by Preston Garno on 3/11/17
  *
- * Annotate a Presenter with this to denote a callback that can be
- * invoked at any time without warning
+ * Used for defining existing annotations (e.g. @Nullable) that are required to be used
+ * and/or compatible with any of edu.gvsu.prestongarno.annotations
+ *
+ * NOTE: this is where abstraction stops, so rules for annotation rules are:
+ *          1) Annotate rule with @FunctionalInterface
+ *          2) Annotate implementation of validator with @Validator
  ***************************************************/
-@Repeatable(RawCallContainer.class)
-@Retention(RetentionPolicy.SOURCE)
-@Target(ElementType.TYPE)
-public @interface RawCallback {
-    Class<? extends Callback> Callback();
+@Target(ElementType.ANNOTATION_TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Repeatable(RuleContainer.class)
+public @interface AnnotationRule {
+    String value();
 }
