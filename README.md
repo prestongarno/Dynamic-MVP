@@ -13,5 +13,5 @@ This library is a:
 
 Dynamic-MVP consists of two modules:
       
-      1. mvp-compiler(https://github.com/prestongarno/mvp-compiler) - annotation processor, dependency only needed at compile time
-      2. [dynamic-mvp](https://github.com/prestongarno/Dynamic-MVP) - runtime dependency
+1. [mvp-compiler](https://github.com/prestongarno/mvp-compiler) - annotation processor, dependency only needed at compile time
+2. [dynamic-mvp](https://github.com/prestongarno/Dynamic-MVP) - runtime dependency
