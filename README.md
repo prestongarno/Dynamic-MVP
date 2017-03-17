@@ -17,11 +17,20 @@ This library is a:
   * direct effort to simplify callbacks to view events asynchronously  
 
 ***Tentative annotation definitions:***
+__Presentation Layer__
+| Name | Annotation Parameters | Definition |
+|  :---: | :---: | :----------------------------- |
+| @EventHandler | Void |  Mark a method in Class\<T extends Presenter> that takes parameter \<T extends Event\>\n\t-called when a view broadcasts an event of this type to a presenter |
+| @Callback | Void | Denotes functional interfaces that define callback parameters to a view |
+| @Enforce | @Callback | Mark callback events that are independent of View broadcasting an event (e.g. an authorization event)|
+| @LinkedCallback | @Callback | Define callback types in \<T extends Event> that are immutably linked (e.g. RequestUsernameEvent from a view will always call view's implementation of @Callback OnProvideUsername interface) |
+| @Default | class/method | include externally defined EventHandler(s) with a Presenter class (e.g. default error handling) |
+| @State | \<T> | mark constructor parameters in \<T extends Event>, optional syntactical annotation |
 
 
 __View Layer__
 
-|  Name | AnnotationParameters | Definition |
+|  Name | Annotation Parameters | Definition |
 | ----- | -------- | ------------- |
 | @Presenter | Class | The presenter implementation to be used with this view |
 | @Call | Void | non-private field or method returning @Callback interface implementation |
