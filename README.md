@@ -1,9 +1,7 @@
 # Dynamic-MVP
 **Take the final step and completely decouple your MVP architecture with reusable event interfaces and event handling**
 
-A developer implementing MVP into an application is always forced to make a decision: use a [Supervising Controller](https://martinfowler.com/eaaDev/SupervisingPresenter.html) or a [Passiive View](https://martinfowler.com/eaaDev/PassiveScreen.html). Dynamic-MVP solves this problem and allows for a clear separation between both.
-
-Dynamic-MVP is a solution to this.
+A developer implementing MVP into an application is always forced to make a decision: use a [Supervising Controller](https://martinfowler.com/eaaDev/SupervisingPresenter.html) or a [Passiive View](https://martinfowler.com/eaaDev/PassiveScreen.html). Dynamic-MVP works around this with static checks and generation to provide the glue between the top application layers.
 
 This library is a:
   * solution to the issues with standard Model-View-Presenter implementation such as: 
