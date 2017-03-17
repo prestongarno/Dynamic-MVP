@@ -16,7 +16,7 @@ This library is a:
   * library developed with the Android SDK specifically in mind. Memory leaks are not a concern as references to anonymous inner classes in the view are dropped at request and resolved at view recreation
   * direct effort to simplify callbacks to view events asynchronously  
 
-<U>***Tentative annotation definitions:***<\U>
+***Tentative annotation definitions:***
 
 __Presentation Layer__
 
@@ -39,5 +39,5 @@ __View Layer__
 
 Modules:
       
-1. [mvp-compiler](https://github.com/prestongarno/mvp-compiler) - annotation processor, dependency only needed at compile time
-2. [dynamic-mvp](https://github.com/prestongarno/Dynamic-MVP) - runtime dependency
+1. [mvp-compiler](https://github.com/prestongarno/mvp-compiler) - compile
+2. [dynamic-mvp](https://github.com/prestongarno/Dynamic-MVP) - classpath
