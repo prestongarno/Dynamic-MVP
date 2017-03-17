@@ -5,14 +5,14 @@ A developer implementing MVP into an application is always forced to make a deci
 
 This library is a:
   * solution to the issues with standard Model-View-Presenter implementation such as: 
-      * difficulty maintaining full dependency inversion 
-      * Presentation-layer tests requiring mocks or stubs
+      * difficulty maintaining full dependency inversion which is usually solved by mocking/stubbing views
       * boilerplate code (1:1 View to Presenter relationship)
   * annotation based library. Annotations are used to describe the relationship between a View and its Presenter(s)
   * compile-time annotation processor that eliminates the performance loss inherent to using Reflection (runtime) based solution, making it ideal, yet not specific to, embedded and mobile applications
   * event-driven library that also allows for re-usable event interfaces and handler implementations
-  * library developed with the Android SDK specifically in mind. Memory leaks are not a concern as references to anonymous inner classes in the view are dropped at request and resolved at view recreation
+  * library developed with the Android SDK specifically in mind. References to anonymous inner classes (callbacks) in the view are dropped at request and resolved at view recreation relieving presenters from ever caring about the state of the view
   * direct effort to simplify callbacks to view events asynchronously  
+
 
 ***Tentative annotation definitions:***
 
