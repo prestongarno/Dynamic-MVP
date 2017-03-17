@@ -19,7 +19,7 @@ This library is a:
 ***Tentative annotation definitions:***
 __Presentation Layer__
 | Name | Annotation Parameters | Definition |
-|  :---: | :---: | :----------------------------- |
+|  --- | --- | ----------------------------- |
 | @EventHandler | Void |  Mark a method in Class\<T extends Presenter> |
 
 
