@@ -19,8 +19,7 @@ This library is a:
 ***Tentative annotation definitions:***
 
 __Presentation Layer__
-| Name | Annotation Parameters | Definition
-|  :---: | :---: | :---
+| :---:Name | :---:Annotation Parameters | :---Definition
 | @EventHandler | Void |  Mark a method in Class\<T extends Presenter> that takes parameter \<T extends Event\>\n\t-called when a view broadcasts an event of this type to a presenter |
 | @Callback | Void | Denotes functional interfaces that define callback parameters to a view |
 | @Enforce | @Callback | Mark callback events that are independent of View broadcasting an event (e.g. an authorization event)|
