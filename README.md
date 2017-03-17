@@ -17,7 +17,9 @@ This library is a:
   * direct effort to simplify callbacks to view events asynchronously  
 
 ***Tentative annotation definitions:***
+
 __Presentation Layer__
+
 | Name | Annotation Parameters | Definition |
 |  --- | --- | ----------------------------- |
 | @EventHandler | Void |  Mark a method in Class\<T extends Presenter> |
