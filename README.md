@@ -20,9 +20,10 @@ This library is a:
 
 
 __View Layer__
-|  Name | Annotation Parameters | Definition |
-| ------------- | ------------- || ------------- |
-| @Presenter | Class\<T extends Presenter> | The presenter implementation to be used with this view |
+
+|  Name | AnnotationParameters | Definition |
+| ----- | -------- || ------------- |
+| @Presenter | Class | The presenter implementation to be used with this view |
 | @Call | Void | non-private field or method returning @Callback interface implementation |
 
 Modules:
