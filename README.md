@@ -6,7 +6,10 @@ A developer implementing MVP into an application is always forced to make a deci
 Dynamic-MVP is a solution to this.
 
 This library is a:
-  * solution to the issues with standard Model-View-Presenter implementation namely: difficulty maintaining full dependency inversion, Presentation-layer testability requiring mocks or stubs, boilerplate code (1:1 View to Presenter relationship)
+  * solution to the issues with standard Model-View-Presenter implementation such as: 
+      * difficulty maintaining full dependency inversion 
+      * Presentation-layer tests requiring mocks or stubs
+      * boilerplate code (1:1 View to Presenter relationship)
   * annotation based library. Annotations are used to describe the relationship between a View and its Presenter(s)
   * compile-time annotation processor that eliminates the performance loss inherent to using Reflection (runtime) based solution, making it ideal, yet not specific to, embedded and mobile applications
   * event-driven library that also allows for re-usable event interfaces and handler implementations
