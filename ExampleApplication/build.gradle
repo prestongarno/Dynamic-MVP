@@ -20,7 +20,7 @@ buildscript {
         maven {
             url "https://plugins.gradle.org/m2/"
         }
-        flatDir { dirs './libs' }
+        flatDir { dirs '../libs' }
     }
     dependencies {
         classpath "net.ltgt.gradle:gradle-apt-plugin:0.9"

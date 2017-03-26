@@ -29,6 +29,6 @@ import java.lang.annotation.Target;
  * An exception will be thrown at compile time
  */
 @Retention(RetentionPolicy.SOURCE)
-@Target(ElementType.METHOD)
+@Target(ElementType.TYPE)
 public @interface Callback {
 }

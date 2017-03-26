@@ -20,58 +20,59 @@ import edu.gvsu.prestongarno.annotations.Callback;
 
 import java.util.*;
 
+
 public abstract class Presenter {
 
 //    private static List<Class<? extends Event>> POSSIBLE_EVENTS;
-
-    private final Random random;
-    /**
-     * This Map stores the results of a background job(s) that complete when the view is in an
-     * unknown state.  Will complete when notified by the GM
-     */
-    private final Map<Class<? extends Callback>, Object[]> pendingResults;
-    /**
-     * This Array only exists as long as the View that this View supports is alive
-     * Once it is re-created this will be cleared and any calls to the values here will lead
-     * to a Null Pointer and if not that then you most likely have a memory leak
-     */
-    private final Map<Integer, Event> jobs;
-    /**
-     * The glue that holds it together - when a view changes it's config, etc. references to result
-     * impl. are cleared to allow GC and only implementation type is stored here to know which results
-     * to map to what impl. on the jobs completing and the view being restored
-     */
-    private final Map<Integer, Class<? extends Callback>> jobsType;
-
-    protected Presenter() {
+	
+	private final Random random;
+	/**
+	 * This Map stores the results of a background job(s) that complete when the view is in an
+	 * unknown state.  Will complete when notified by the GM
+	 */
+	private final Map<Class<? extends Callback>, Object[]> pendingResults;
+	/**
+	 * This Array only exists as long as the View that this View supports is alive
+	 * Once it is re-created this will be cleared and any calls to the values here will lead
+	 * to a Null Pointer and if not that then you most likely have a memory leak
+	 */
+	private final Map<Integer, Event> jobs;
+	/**
+	 * The glue that holds it together - when a view changes it's config, etc. references to result
+	 * impl. are cleared to allow GC and only implementation type is stored here to know which results
+	 * to map to what impl. on the jobs completing and the view being restored
+	 */
+	private final Map<Integer, Class<? extends Callback>> jobsType;
+	
+	protected Presenter() {
 //        POSSIBLE_EVENTS = new ArrayList<>();
-        pendingResults = new HashMap<Class<? extends Callback>, Object[]>(2, 0.75f);
-        random = new Random();
-        jobs = new HashMap<Integer, Event>(4, 0.75f);
-        jobsType = new HashMap<Integer, Class<? extends Callback>>(4, 0.75f);
-    }
+		pendingResults = new HashMap<Class<? extends Callback>, Object[]>(2, 0.75f);
+		random = new Random();
+		jobs = new HashMap<Integer, Event>(4, 0.75f);
+		jobsType = new HashMap<Integer, Class<? extends Callback>>(4, 0.75f);
+	}
 
 //    static void addPossibleEvent(Class<? extends Event> event){
 //        POSSIBLE_EVENTS.add(event);
 //    }
-
-    /**
-     * GM calls this method to broadcast
-     * events a View is concerned with
-     * All subclasses must call super.onEvent()
-     * if they want their results returned to the
-     * main thread.
-     */
-    protected void onEvent(Event event) {
-        int key = generateJobNumber();
-        jobs.put(key, event);
-    }
-
-    private int generateJobNumber() {
-        return random.nextInt(999999999);
-    }
+	
+	/**
+	 * GM calls this method to broadcast
+	 * events a View is concerned with
+	 * All subclasses must call super.onEvent()
+	 * if they want their results returned to the
+	 * main thread.
+	 */
+	protected void onEvent(Event event) {
+		int key = generateJobNumber();
+		jobs.put(key, event);
+	}
+	
+	private int generateJobNumber() {
+		return random.nextInt(999999999);
+	}
 /*
-    @SuppressWarnings("unchecked")
+	 @SuppressWarnings("unchecked")
     void setViewHandle(MVPView view) {
         this.viewHandle = view;*//*
 
@@ -101,10 +102,11 @@ public abstract class Presenter {
     }
 
     */
-/**
-     * Nullify the view, and all pending Events
-     * that are being processed in the background
-     *//*
+	
+	/**
+	 * Nullify the view, and all pending Events
+	 * that are being processed in the background
+	 *//*
 
     void onViewDestroyed() {
         this.viewHandle = null;
@@ -122,63 +124,9 @@ public abstract class Presenter {
         this.jobs.clear();
     }
 */
-
-    protected void onResult(Event event, Object... params)
-    {
-        //method call from subclass presenter to signal job completion
-        // need to generate a class to be able to get the lambda from the view
-    }
-    /**
-     * This method is how the result is passed back. The MVPView instance is hidden in the superclass,
-     * so the only way for the child class to easily pass the results back to the view without manually
-     * doing this same thing is to call super.onResult().
-     * <p>
-     * Why I think that this is a good solution that will completely
-     * decouple the Presentation/Model layer from the view:
-     * 1) Callback is an empty interface
-     * 2)
-     *
-     * @param args
-     */
-    private void onResult(int jobNumber, Object... args) {
-        Callback result;
-        /*if (viewHandle != null) {
-            try {
-
-                Event e = this.jobs.get(jobNumber);
-                if (e == null)
-                    result = this.viewHandle.getImplementation(jobsType.get(jobNumber));
-                else result = e.getCallback();
-
-                result.getClass().getMethods()[0].invoke(result, args);
-                //check if it's a func interface
-                Method m = result.getClass().getEnclosingMethod();
-                if (m == null)
-                    throw new IllegalArgumentException("Callback subclass must only contain a single method!");
-
-                //Type checking args against the result method
-                Class[] parameterTypes = m.getParameterTypes();
-                if (parameterTypes.length != args.length)
-                    throw new IllegalArgumentException("Callback implementation method arguments do not" +
-                            "match provided arguments! ");
-                for (int i = 0; i < parameterTypes.length; i++) {
-                    if (parameterTypes[i] != args[i].getClass()) {
-                        throw new IllegalArgumentException("Type " + parameterTypes[i] + " does not match" +
-                                " provided result argument: " + args[i]);
-                    }
-                }
-            } catch (Exception e) {
-                //Runtime exception will be thrown before this if
-                //the wrong args are provided
-                e.printStackTrace();
-                System.out.println(0 / 0);
-            }
-        } else {
-            pendingResults.put(jobsType.get(jobNumber), args);
-        }*/
-    }
-
-    //Meta-Programming - Processor should generate methods taking each seperate event
-    // implementation into account
-
+	protected void onResult(Event event, Object... params) {
+	}
+	
+	private void onResult(int jobNumber, Object... args) {
+	}
 }
