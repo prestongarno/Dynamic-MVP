@@ -8,3 +8,7 @@ gradle
 gradlew
 gradlew.bat
 *.scratch
+*.iml
+*.ipr
+*.iws
+libs
