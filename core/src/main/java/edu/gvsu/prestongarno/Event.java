@@ -38,7 +38,7 @@ public abstract class Event<T> {
 	/*****************************************
 	 * This value should be assigned at compileTime?
 	 ****************************************/
-	private static Event<?> DYNAMIC_CALLBACK;
+	private T DYNAMIC_CALLBACK;
 	
 	/*****************************************
 	 * Dependency injection to define result type for each and every request that is allowed to be sent to a View
@@ -54,11 +54,11 @@ public abstract class Event<T> {
 	}
 	
 	public T call() {
-		// instrument an overriding method in the classes that extend view to
-		// get the correct lambda/anon class and all current captures from the view
-		throw new IllegalArgumentException("View implementation of "
-				+ DYNAMIC_CALLBACK.getClass()
-				+ " was not loaded");
+		return CALLBACK_TYPE == null ? DYNAMIC_CALLBACK : CALLBACK_TYPE;
+	}
+	
+	public void setCallback(T callback) {
+		this.DYNAMIC_CALLBACK = DYNAMIC_CALLBACK;
 	}
 	
 	/*****************************************

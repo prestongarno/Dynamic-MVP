@@ -37,11 +37,7 @@ apply plugin: 'net.ltgt.apt'
 sourceCompatibility = 1.8
 
 repositories {
-    flatDir { dirs './libs' }
-}
-
-jar {
-    //dont do shit
+    flatDir { dirs '../libs' }
 }
 
 dependencies {

@@ -16,7 +16,8 @@
 
 package edu.gvsu.prestongarno.example;
 
-import edu.gvsu.prestongarno.example.SampleResources.SampleEvent;
+import edu.gvsu.prestongarno.Presenter;
+
 
 /**
  * ========================================================================
@@ -26,6 +27,7 @@ import edu.gvsu.prestongarno.example.SampleResources.SampleEvent;
 public class runner {
     public static void main(String[] args) {
         SampleView view = new SampleView();
-//        view.testEvent(new SampleEvent(view.sampleCallback));
-    }
+		 final Class<?>[] interfaces = view.getClass().getInterfaces();
+		 System.out.println(interfaces);
+	 }
 }

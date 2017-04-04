@@ -44,7 +44,7 @@ public abstract class Presenter {
 	 */
 	private final Map<Integer, Class<? extends Callback>> jobsType;
 	
-	protected Presenter() {
+	public Presenter() {
 //        POSSIBLE_EVENTS = new ArrayList<>();
 		pendingResults = new HashMap<Class<? extends Callback>, Object[]>(2, 0.75f);
 		random = new Random();

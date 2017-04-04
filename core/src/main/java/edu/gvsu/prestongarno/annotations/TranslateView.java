@@ -14,16 +14,14 @@
  *        limitations under the License.
  */
 
-import edu.gvsu.prestongarno.annotations.meta.AnnotationRule;
-import org.junit.Test;
+package edu.gvsu.prestongarno.annotations;
 
-/**
- * *************************************************
- * Dynamic-MVP - PACKAGE_NAME - by Preston Garno on 3/11/17
- ***************************************************/
-public class ScratchUnitTest {
-    @Test
-    public void testTestMethod() throws Exception {
-        System.out.println(AnnotationRule.class.getCanonicalName());
-    }
+import edu.gvsu.prestongarno.Presenter;
+
+
+/** **************************************************
+ * Dynamic-MVP - edu.gvsu.prestongarno.internal - by Preston Garno on 3/26/17
+ * ***************************************************/
+public interface TranslateView {
+	Presenter create();
 }

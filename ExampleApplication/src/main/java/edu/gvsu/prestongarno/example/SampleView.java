@@ -16,18 +16,17 @@
 
 package edu.gvsu.prestongarno.example;
 
-import edu.gvsu.prestongarno.GM;
-import edu.gvsu.prestongarno.annotations.*;
-import edu.gvsu.prestongarno.interfaces.Event;
-import edu.gvsu.prestongarno.example.SampleResources.SampleCallback;
+import edu.gvsu.prestongarno.Event;
+import edu.gvsu.prestongarno.annotations.View;
 
-@View(Presenter = SamplePresenter.class)
+
+/** **************************************************
+ * Dynamic-MVP - edu.gvsu.prestongarno.sourcegentests.SampleSets.set_2 - by Preston Garno on 3/25/17
+ * ***************************************************/
+@View(SamplePresenter.class)
 public class SampleView {
-
-    public void testEvent(Event event){
-        GM.getInstance().on(event);
-    }
-
-    @Handler
-    public final SampleCallback sampleCallback = System.out::println;
+	
+	public void onSomeButtonPressed(int parameter) {
+		Event e = new SamplePresenter.NumberRequestEvent(i -> System.out.println(i));
+	}
 }

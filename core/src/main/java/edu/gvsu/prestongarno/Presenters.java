@@ -16,7 +16,8 @@
 
 package edu.gvsu.prestongarno;
 
-import java.util.Map;
+import edu.gvsu.prestongarno.annotations.TranslateView;
+
 
 /**
  * ========================================================================
@@ -25,15 +26,16 @@ import java.util.Map;
  * Presenters.java: Just a static method that returns a list of Presenters that
  * are concerned with the particular lifecycle ID
  */
-public class Presenters {
-
-    private static Map<String, Presenter> MASTER_PRESENTER_LIST;
-
-    public static Presenter[] initializePresenters() {
-        throw new RuntimeException("nono");
-    }
-
-    //View[] getPresenter()
+public class Presenters<T extends Presenter> {
+	
+	
+	@SuppressWarnings("unchecked")
+	public T activatePresenter(Object view) {
+		// AST makes the view implement the TranslateView
+		// interface and create a new Presenter in the create method
+		return (T) ((TranslateView) view).create();
+	}
+	//View[] getPresenter()
 
     //============================================================================//
     //      A list of all possible presenters in the app

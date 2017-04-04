@@ -16,20 +16,49 @@
 
 package edu.gvsu.prestongarno.example;
 
+import edu.gvsu.prestongarno.Event;
 import edu.gvsu.prestongarno.Presenter;
+import edu.gvsu.prestongarno.annotations.Callback;
 import edu.gvsu.prestongarno.annotations.EventHandler;
-import edu.gvsu.prestongarno.example.SampleResources.SampleEvent;
 
+
+/** **************************************************
+ * Dynamic-MVP - edu.gvsu.prestongarno.sourcegentests.SampleSets.set_2 - by Preston Garno on 3/25/17
+ * ***************************************************/
 public class SamplePresenter extends Presenter {
-
-    @EventHandler
-    protected void methodThatCanBeNamedWhateverIWant(SampleEvent sampleEvent) {
-        super.onEvent(sampleEvent);
-
-        if(sampleEvent.printNameAtEnd)
-            super.onResult(sampleEvent, "Hello, my name is : prestongarno");
-        else
-            super.onResult(sampleEvent, "This string doesn't include my name");
-    }
-
+	
+	public SamplePresenter() {
+		//required noArg constructor
+	}
+	
+	/*****************************************
+	 * The presenter event handler
+	 * @param event the event
+	 ****************************************/
+	@EventHandler
+	public void onRequestNumber(NumberRequestEvent event) {
+		// logic here
+	}
+	
+	/*****************************************
+	 * A sample event definition: provide a limit and a callback implementation
+	 * of type OnNumberProvided and a callback will be invoked callback.onReturnNumber( param )
+	 * on the view class dynamically
+	 ****************************************/
+	public static class NumberRequestEvent extends Event<OnNumberProvided> {
+		public NumberRequestEvent(OnNumberProvided callback) {
+			super(callback);
+		}
+		
+		@Override
+		public OnNumberProvided call() {
+			return super.call();
+		}
+	}
+	
+	@Callback
+	@FunctionalInterface
+	public interface OnNumberProvided {
+		void onReturnNumber(int number);
+	}
 }
