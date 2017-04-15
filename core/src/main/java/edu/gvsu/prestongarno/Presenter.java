@@ -23,7 +23,7 @@ import java.util.*;
 
 public abstract class Presenter {
 
-//    private static List<Class<? extends Event>> POSSIBLE_EVENTS;
+//    private static List<Class<? extends EventDefinition>> POSSIBLE_EVENTS;
 	
 	private final Random random;
 	/**
@@ -52,7 +52,7 @@ public abstract class Presenter {
 		jobsType = new HashMap<Integer, Class<? extends Callback>>(4, 0.75f);
 	}
 
-//    static void addPossibleEvent(Class<? extends Event> event){
+//    static void addPossibleEvent(Class<? extends EventDefinition> event){
 //        POSSIBLE_EVENTS.add(event);
 //    }
 	
@@ -79,7 +79,7 @@ public abstract class Presenter {
 */
 /*        Callback result;
         Object[] args;
-        for(Map.Entry<Class<? extends Event>, Object[]> pending : this.pendingResults.entrySet()){
+        for(Map.Entry<Class<? extends EventDefinition>, Object[]> pending : this.pendingResults.entrySet()){
             try {
                 result = view.getImplementation(pending.getKey().newInstance().getResult().getClass());
             } catch (Exception e) {
@@ -110,12 +110,12 @@ public abstract class Presenter {
 
     void onViewDestroyed() {
         this.viewHandle = null;
-        Iterator<Map.Entry<Integer, Event>> it = jobs.entrySet().iterator();
+        Iterator<Map.Entry<Integer, EventDefinition>> it = jobs.entrySet().iterator();
         int key;
-        Event event;
+        EventDefinition event;
         */
 /*while (it.hasNext()) {
-            Map.Entry<Integer, Event> next = it.next();
+            Map.Entry<Integer, EventDefinition> next = it.next();
             key = next.getKey();
             event = next.getValue();
             this.jobsType.put(key, event.getCallback().getClass());

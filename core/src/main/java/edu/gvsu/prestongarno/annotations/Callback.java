@@ -26,9 +26,9 @@ import java.lang.annotation.Target;
  *
  * Used to denote an @FunctionalInterface that will be invoked on a View
  * IMPORTANT: If an interface annotated with @Callback is not also a FunctionalInterface,
- * An exception will be thrown at compile time
+ * An exception will be thrown at compile time (Maybe, I haven't gotten that far yet)
  */
 @Retention(RetentionPolicy.SOURCE)
-@Target(ElementType.TYPE)
+@Target(ElementType.PARAMETER)
 public @interface Callback {
 }

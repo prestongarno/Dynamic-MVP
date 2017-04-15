@@ -12,7 +12,7 @@
  *        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *        See the License for the specific language governing permissions and
  *        limitations under the License.
- */
+ ****************************************/
 
 package edu.gvsu.prestongarno.annotations;
 
@@ -21,6 +21,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/****************************************
+ * Presenter type used with the view (prob need to add in a dependency injection
+ * functionality and implicit event receivers for this to even be usable
+ ****************************************/
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
 public @interface View {
