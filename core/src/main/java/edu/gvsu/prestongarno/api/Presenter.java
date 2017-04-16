@@ -14,34 +14,35 @@
  *        limitations under the License.
  */
 
-package edu.gvsu.prestongarno;
+package edu.gvsu.prestongarno.api;
 
 import edu.gvsu.prestongarno.annotations.Callback;
 
 import java.util.*;
 
 
+@Deprecated
 public abstract class Presenter {
-
+/*
 //    private static List<Class<? extends EventDefinition>> POSSIBLE_EVENTS;
 	
 	private final Random random;
-	/**
+	*//**
 	 * This Map stores the results of a background job(s) that complete when the view is in an
 	 * unknown state.  Will complete when notified by the GM
-	 */
+	 *//*
 	private final Map<Class<? extends Callback>, Object[]> pendingResults;
-	/**
+	*//**
 	 * This Array only exists as long as the View that this View supports is alive
 	 * Once it is re-created this will be cleared and any calls to the values here will lead
 	 * to a Null Pointer and if not that then you most likely have a memory leak
-	 */
+	 *//*
 	private final Map<Integer, Event> jobs;
-	/**
+	*//**
 	 * The glue that holds it together - when a view changes it's config, etc. references to result
 	 * impl. are cleared to allow GC and only implementation type is stored here to know which results
 	 * to map to what impl. on the jobs completing and the view being restored
-	 */
+	 *//*
 	private final Map<Integer, Class<? extends Callback>> jobsType;
 	
 	public Presenter() {
@@ -56,13 +57,13 @@ public abstract class Presenter {
 //        POSSIBLE_EVENTS.add(event);
 //    }
 	
-	/**
+	*//**
 	 * GM calls this method to broadcast
 	 * events a View is concerned with
 	 * All subclasses must call super.onEvent()
 	 * if they want their results returned to the
 	 * main thread.
-	 */
+	 *//*
 	protected void onEvent(Event event) {
 		int key = generateJobNumber();
 		jobs.put(key, event);
@@ -71,13 +72,13 @@ public abstract class Presenter {
 	private int generateJobNumber() {
 		return random.nextInt(999999999);
 	}
-/*
+*//*
 	 @SuppressWarnings("unchecked")
     void setViewHandle(MVPView view) {
-        this.viewHandle = view;*//*
+        this.viewHandle = view;*//**//*
 
-*/
-/*        Callback result;
+*//*
+*//*        Callback result;
         Object[] args;
         for(Map.Entry<Class<? extends EventDefinition>, Object[]> pending : this.pendingResults.entrySet()){
             try {
@@ -97,36 +98,36 @@ public abstract class Presenter {
                     System.out.println(0/0);
                 }
             }
-        }*//*
+        }*//**//*
 
     }
 
-    */
+    *//*
 	
-	/**
+	*//**
 	 * Nullify the view, and all pending Events
 	 * that are being processed in the background
-	 *//*
+	 *//**//*
 
     void onViewDestroyed() {
         this.viewHandle = null;
         Iterator<Map.Entry<Integer, EventDefinition>> it = jobs.entrySet().iterator();
         int key;
         EventDefinition event;
-        */
-/*while (it.hasNext()) {
+        *//*
+*//*while (it.hasNext()) {
             Map.Entry<Integer, EventDefinition> next = it.next();
             key = next.getKey();
             event = next.getValue();
             this.jobsType.put(key, event.getCallback().getClass());
-        }*//*
+        }*//**//*
 
         this.jobs.clear();
     }
-*/
+*//*
 	protected void onResult(Event event, Object... params) {
 	}
 	
 	private void onResult(int jobNumber, Object... args) {
-	}
+	}*/
 }

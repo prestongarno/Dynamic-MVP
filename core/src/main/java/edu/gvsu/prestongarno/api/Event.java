@@ -14,7 +14,7 @@
  *        limitations under the License.
  ****************************************/
 
-package edu.gvsu.prestongarno;
+package edu.gvsu.prestongarno.api;
 
 import java.lang.ref.WeakReference;
 
@@ -25,12 +25,12 @@ import java.lang.ref.WeakReference;
  *    Represents an event from the view
  * <p>
  ****************************************/
-public class Event<T> {
+public class Event<C> {
 	
 	
-	private final Class<T> CALLBACK_TYPE;
+	private final Class<C> CALLBACK_TYPE;
 
-	private WeakReference<T> DYNAMIC_CALLBACK;
+	private WeakReference<C> DYNAMIC_CALLBACK;
 	
 	/*****************************************
 	 * Dependency injection to define result type for each and every request that is allowed to be sent to a View
@@ -41,19 +41,32 @@ public class Event<T> {
 	 * displaying the data, but allowing the Presenter to define the type of it is about as
 	 * clean of a decoupling of the View and the Model as I can imagine with the least hassle and side effects
 	 ****************************************/
-	public Event(Class<T> callback) {
+	public Event(Class<C> callback) {
 		CALLBACK_TYPE = callback;
 	}
 
 	/*****************************************
-	 * @param willProvide the @FunctionalInterface type that the callback instance will be
+	 //* @param willProvide the @FunctionalInterface type that the callback instance will be
 	 * @param <T> Type argument
-	 * @return a new Event\<T\> instance -> only used for Event definition at presenter instance creation
+	 * @return a new Event\<C\> instance -> only used for Event definition at presenter instance creation
 	 *
 	 * 		todo probably move this to a new class, confuse this with others probably
 	 ****************************************/
-	public static <T> Event<T> define(Class<T> willProvide) {
-		return new Event<>(willProvide);
+	public static <T> Event<T> bind() {
+		return null;
+	}
+
+	public interface Messager<T> {
+		void send();
+	}
+
+	public Messager<C> create(C call) {
+		return new Messager<C>() {
+			@Override
+			public void send() {
+
+			}
+		};
 	}
 
 	/*****************************************
@@ -68,14 +81,14 @@ public class Event<T> {
 	 * @param callback the actual callback type (lambda expression)
 	 * @return runtime instance of event for view to do whatever with
 	 ****************************************/
-	public Event<T> send(T callback) {
+	public Event<C> send(C callback) {
 		return new Event<>(this.CALLBACK_TYPE);
 	}
 
 	/*****************************************
 	 * @return the callback instance
 	 ****************************************/
-	public T get() {
+	public C get() {
 		return this.DYNAMIC_CALLBACK != null ? DYNAMIC_CALLBACK.get() : null; // <-- here is where runtime callback "capture" of variables occurs
 	}
 
@@ -83,7 +96,7 @@ public class Event<T> {
 	 * @param callback used in the background to
 	 *                   resolve references to callback implementations
 	 ****************************************/
-	void setCallReference(T callback) {
+	void setCallReference(C callback) {
 		this.DYNAMIC_CALLBACK = new WeakReference<>(callback);
 	}
 	

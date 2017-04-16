@@ -16,12 +16,13 @@
 
 package edu.gvsu.prestongarno.annotations;
 
-import edu.gvsu.prestongarno.Presenter;
+import edu.gvsu.prestongarno.api.Presenter;
 
 
 /** **************************************************
  * Dynamic-MVP - edu.gvsu.prestongarno.internal - by Preston Garno on 3/26/17
  * ***************************************************/
 public interface TranslateView {
+	// not using this -> only was used for interface impl p.o.c.
 	Presenter create();
 }

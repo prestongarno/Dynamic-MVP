@@ -16,6 +16,8 @@
 
 package edu.gvsu.prestongarno.annotations;
 
+import edu.gvsu.prestongarno.api.Presenter;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -28,5 +30,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
 public @interface View {
-    Class<? extends edu.gvsu.prestongarno.Presenter> value();
+    Class<? extends Presenter> value();
 }
