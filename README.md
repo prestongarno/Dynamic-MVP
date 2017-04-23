@@ -1,3 +1,5 @@
+#<b>Not actively developed as of 04/19/2016 since Google announced full lambda and method handle compat support standard this month.  TODO find some other neat way to use AST transformation for android framework libraries
+
 ##<i>This is NOT part of any supported API. If you write code that depends on this, you do so at your own risk. This code and its internal interfaces are subject to change or deletion without notice.</i>
 # Dynamic-MVP
 **Take the final step and completely decouple your MVP architecture with reusable event interfaces and event handling**
@@ -15,8 +17,6 @@ This library is a:
   * In particular, this library also provides backwards compatibility for lambda expressions by transforming them to static methods or singletons, depending on the capture state
   * callbacks to view events asynchronously  
   
-This also goes against standard practice by requiring implementation of an interface in the Presenter rather than the view.  //TODO automate this
-
 __Presentation Layer__
 
 
